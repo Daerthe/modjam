@@ -7,7 +7,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -63,7 +62,7 @@ public class basicstaff extends Item
                 f = 1.0F;
             }
 
-            EntityArrow entityarrow = new EntityArrow(par2World, par3EntityPlayer, f * 2.0F);
+            EntityWoodStaff entityarrow = new EntityWoodStaff(par2World, par3EntityPlayer, f * 2.0F);
 
             if (f == 1.0F)
             {

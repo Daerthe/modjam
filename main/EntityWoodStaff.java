@@ -49,14 +49,14 @@ public class EntityWoodStaff extends Entity implements IProjectile
     public EntityWoodStaff(World par1World)
     {
         super(par1World);
-        this.renderDistanceWeight = 0.0D;
+        this.renderDistanceWeight = 10.0D;
         this.setSize(0.5F, 0.5F);
     }
 
     public EntityWoodStaff(World par1World, double par2, double par4, double par6)
     {
         super(par1World);
-        this.renderDistanceWeight = 0.0D;
+        this.renderDistanceWeight = 10.0D;
         this.setSize(0.5F, 0.5F);
         this.setPosition(par2, par4, par6);
         this.yOffset = 0.0F;
@@ -65,7 +65,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
     public EntityWoodStaff(World par1World, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase, float par4, float par5)
     {
         super(par1World);
-        this.renderDistanceWeight = 0.0D;
+        this.renderDistanceWeight = 10.0D;
         this.shootingEntity = par2EntityLivingBase;
 
         if (par2EntityLivingBase instanceof EntityPlayer)
@@ -73,7 +73,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
             this.canBePickedUp = 1;
         }
 
-        this.posY = par2EntityLivingBase.posY + (double)par2EntityLivingBase.getEyeHeight() - 0.0;
+        this.posY = par2EntityLivingBase.posY + (double)par2EntityLivingBase.getEyeHeight() - 0.10000000149011612D;
         double d0 = par3EntityLivingBase.posX - par2EntityLivingBase.posX;
         double d1 = par3EntityLivingBase.boundingBox.minY + (double)(par3EntityLivingBase.height / 3.0F) - this.posY;
         double d2 = par3EntityLivingBase.posZ - par2EntityLivingBase.posZ;
@@ -95,7 +95,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
     public EntityWoodStaff(World par1World, EntityLivingBase par2EntityLivingBase, float par3)
     {
         super(par1World);
-        this.renderDistanceWeight = 0.0D;
+        this.renderDistanceWeight = 10.0D;
         this.shootingEntity = par2EntityLivingBase;
 
         if (par2EntityLivingBase instanceof EntityPlayer)
@@ -112,7 +112,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
         this.yOffset = 0.0F;
         this.motionX = (double)(-MathHelper.sin(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI));
         this.motionZ = (double)(MathHelper.cos(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI));
-        this.motionY = (double)(-MathHelper.sin(this.rotationPitch / 0.0F * (float)Math.PI));
+        this.motionY = (double)(-MathHelper.sin(this.rotationPitch / 180.0F * (float)Math.PI));
         this.setThrowableHeading(this.motionX, this.motionY, this.motionZ, par3 * 1.5F, 1.0F);
     }
 
@@ -221,7 +221,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
             {
                 ++this.ticksInGround;
 
-                if (this.ticksInGround == 3)
+                if (this.ticksInGround == 1200)
                 {
                     this.setDead();
                 }
@@ -367,7 +367,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
                     else
                     {
                         this.motionX *= -0.10000000149011612D;
-                        this.motionY *= -0.0;
+                        this.motionY *= -0.10000000149011612D;
                         this.motionZ *= -0.10000000149011612D;
                         this.rotationYaw += 180.0F;
                         this.prevRotationYaw += 180.0F;
@@ -386,7 +386,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
                     this.motionZ = (double)((float)(movingobjectposition.hitVec.zCoord - this.posZ));
                     f2 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
                     this.posX -= this.motionX / (double)f2 * 0.05000000074505806D;
-                    this.posY -= this.motionY / (double)f2 * 0.0;
+                    this.posY -= this.motionY / (double)f2 * 0.05000000074505806D;
                     this.posZ -= this.motionZ / (double)f2 * 0.05000000074505806D;
                     this.playSound("random.bowhit", 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
                     this.inGround = true;
@@ -404,7 +404,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
             {
                 for (l = 0; l < 4; ++l)
                 {
-                    this.worldObj.spawnParticle("crit", this.posX + this.motionX * (double)l / 4.0D, this.posY + this.motionY * (double)l / 0.0D, this.posZ + this.motionZ * (double)l / 4.0D, -this.motionX, -this.motionY + 0.0D, -this.motionZ);
+                    this.worldObj.spawnParticle("crit", this.posX + this.motionX * (double)l / 4.0D, this.posY + this.motionY * (double)l / 4.0D, this.posZ + this.motionZ * (double)l / 4.0D, -this.motionX, -this.motionY + 0.2D, -this.motionZ);
                 }
             }
 
