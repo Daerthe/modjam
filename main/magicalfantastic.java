@@ -36,6 +36,9 @@ public static Block magicshardore;
 
 //tools
 
+//crafting handlers
+public static magicextractorCraftingHandler transmutationstoneCraftingHandler = new magicextractorCraftingHandler();
+
 //Declaring Init
 @Init
 public void load(FMLInitializationEvent event){
@@ -56,7 +59,18 @@ LanguageRegistry.addName(magicshard, "Urania Fragment");
 LanguageRegistry.addName(orangedust,"Potestatem");
 //world generators
 GameRegistry.registerWorldGenerator(new WorldGeneratorMagicShardOre());
-//
+//crafting handlers
+GameRegistry.registerCraftingHandler(transmutationstoneCraftingHandler);
+}
+//crafting recipes
+public static void recipes(){
+	GameRegistry.addRecipe(new ItemStack(magicalfantastic.orangedust,1),new Object[]{
+		
+		"IGR","","",'I',magicalfantastic.magicextractor,'G',Item.glowstone,'R',Item.redstone
+		
+	});
+
+
 
 
 }
