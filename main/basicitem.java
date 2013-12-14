@@ -16,5 +16,8 @@ public void registerIcons(IconRegister reg) { // Make sure to import IconRegiste
 if (itemID == magicalfantastic.magicshard.itemID) {
 this.itemIcon = reg.registerIcon("magic_shard"); // You can also replace blockID and blockIcon with itemID and itemIcon
 }
+if (itemID == magicalfantastic.orangedust.itemID) {
+this.itemIcon = reg.registerIcon("orange_dust"); // You can also replace blockID and blockIcon with itemID and itemIcon
+}
 }
 }
