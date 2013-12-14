@@ -154,7 +154,7 @@ public class basicstaff extends Item
      */
     public int getItemEnchantability()
     {
-        return 1;
+        return 3;
     }
 
     

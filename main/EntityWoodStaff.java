@@ -41,7 +41,7 @@ public class EntityWoodStaff extends Entity implements IProjectile
     public Entity shootingEntity;
     private int ticksInGround;
     private int ticksInAir;
-    private double damage = 2.5D;
+    private double damage = 3.2D;
 
     /** The amount of knockback an arrow applies when it hits a mob. */
     private int knockbackStrength;
