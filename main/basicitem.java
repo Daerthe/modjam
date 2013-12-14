@@ -12,5 +12,9 @@ public basicitem(int par1){
 	super(par1);
 	setCreativeTab(CreativeTabs.tabMaterials);
 }
-	
+public void registerIcons(IconRegister reg) { // Make sure to import IconRegister!
+if (itemID == magicalfantastic.magicshard.itemID) {
+this.itemIcon = reg.registerIcon("magic_shard"); // You can also replace blockID and blockIcon with itemID and itemIcon
+}
+}
 }

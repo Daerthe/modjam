@@ -156,24 +156,15 @@ public class basicstaff extends Item
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister)
-    {
-        this.itemIcon = par1IconRegister.registerIcon(this.getIconString() + "_standby");
-        this.iconArray = new Icon[bowPullIconNameArray.length];
-
-        for (int i = 0; i < this.iconArray.length; ++i)
-        {
-            this.iconArray[i] = par1IconRegister.registerIcon(this.getIconString() + "_" + bowPullIconNameArray[i]);
-        }
+    public void registerIcons(IconRegister reg) { // Make sure to import IconRegister!
+    	if (itemID == magicalfantastic.Woodstaff.itemID) {
+    	this.itemIcon = reg.registerIcon("woodstaff"); // You can also replace blockID and blockIcon with itemID and itemIcon
+    	}
     }
-
-    @SideOnly(Side.CLIENT)
+  
 
     /**
      * used to cycle through icons based on their used duration, i.e. for the bow
      */
-    public Icon getItemIconForUseDuration(int par1)
-    {
-        return this.iconArray[par1];
-    }
+   
 }

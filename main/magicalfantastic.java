@@ -28,6 +28,7 @@ public class magicalfantastic {
 //Telling forge that we are creating these
 //items
 public static Item Woodstaff;
+public static Item magicshard;
 //blocks
 public static Block magicshardore;
 
@@ -40,11 +41,14 @@ public void load(FMLInitializationEvent event){
  
  // define items
         Woodstaff=new basicstaff(3250).setUnlocalizedName("Woodstaff");
+        magicshard = new basicitem(3251).setUnlocalizedName("magicshard");
 // define blocks
 magicshardore = new magicshardore(3350,magicshardore).setUnlocalizedName("MagicShardOre").setHardness(7.0F).setLightValue(0.625F).setResistance(5.0F);
-
+GameRegistry.registerBlock(magicshardore,"magicshardore");
 //adding names
 LanguageRegistry.addName(Woodstaff,"Wooden Staff");
+LanguageRegistry.addName(magicshardore, "Melpomene");
+LanguageRegistry.addName(magicshard, "Melpomene Fragment");
 //world generators
 GameRegistry.registerWorldGenerator(new WorldGeneratorMagicShardOre());
 
