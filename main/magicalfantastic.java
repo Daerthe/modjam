@@ -64,9 +64,9 @@ GameRegistry.registerCraftingHandler(transmutationstoneCraftingHandler);
 }
 //crafting recipes
 public static void recipes(){
-	GameRegistry.addRecipe(new ItemStack(magicalfantastic.orangedust,1),new Object[]{
+	GameRegistry.addShapelessRecipe(new ItemStack(magicalfantastic.orangedust,1),new Object[]{
 		
-		"IGR","","",'I',magicalfantastic.magicextractor,'G',Item.glowstone,'R',Item.redstone
+		'I',magicextractor,'G',Item.glowstone,'R',Item.redstone
 		
 	});
 
