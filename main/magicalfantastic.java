@@ -30,6 +30,7 @@ public class magicalfantastic {
 public static Item Woodstaff;
 public static Item magicshard;
 public static Item orangedust;
+public static Item magicextractor;
 //blocks
 public static Block magicshardore;
 
@@ -44,6 +45,7 @@ public void load(FMLInitializationEvent event){
         Woodstaff=new basicstaff(3250).setUnlocalizedName("Woodstaff");
         magicshard = new basicitem(3251).setUnlocalizedName("magicshard");
         orangedust = new basicitem(3252).setUnlocalizedName("orangedust");
+        magicextractor = new basicitem(3253).setUnlocalizedName("magicextractor");
 // define blocks
 magicshardore = new magicshardore(3350,magicshardore).setUnlocalizedName("MagicShardOre").setHardness(7.0F).setLightValue(0.625F).setResistance(5.0F);
 GameRegistry.registerBlock(magicshardore,"magicshardore");
@@ -54,6 +56,8 @@ LanguageRegistry.addName(magicshard, "Urania Fragment");
 LanguageRegistry.addName(orangedust,"Potestatem");
 //world generators
 GameRegistry.registerWorldGenerator(new WorldGeneratorMagicShardOre());
+//
+
 
 }
 }
