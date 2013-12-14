@@ -7,6 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -47,7 +48,8 @@ public class basicstaff extends Item
 
         boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
-        
+        if (flag || par3EntityPlayer.inventory.hasItem(Item.arrow.itemID))
+        {
             float f = (float)j / 20.0F;
             f = (f * f + f * 2.0F) / 3.0F;
 
@@ -61,7 +63,7 @@ public class basicstaff extends Item
                 f = 1.0F;
             }
 
-            EntityWoodStaff entityarrow = new EntityWoodStaff(par2World, par3EntityPlayer, f * 2.0F);
+            EntityArrow entityarrow = new EntityArrow(par2World, par3EntityPlayer, f * 2.0F);
 
             if (f == 1.0F)
             {
@@ -96,7 +98,7 @@ public class basicstaff extends Item
             }
             else
             {
-                
+                par3EntityPlayer.inventory.consumeInventoryItem(Item.arrow.itemID);
             }
 
             if (!par2World.isRemote)
@@ -104,7 +106,7 @@ public class basicstaff extends Item
                 par2World.spawnEntityInWorld(entityarrow);
             }
         }
-    
+    }
 
     public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
@@ -152,8 +154,22 @@ public class basicstaff extends Item
      */
     public int getItemEnchantability()
     {
-        return 4;
+        return 1;
     }
+
+    
+
+    @SideOnly(Side.CLIENT)
+
+    /**
+     * used to cycle through icons based on their used duration, i.e. for the bow
+     */
+    public Icon getItemIconForUseDuration(int par1)
+    {
+        return this.iconArray[par1];
+    }
+
+
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) { // Make sure to import IconRegister!
