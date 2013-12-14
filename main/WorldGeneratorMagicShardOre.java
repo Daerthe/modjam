@@ -18,9 +18,9 @@ case 0 : generateSurface(world, random,chunkX*16,chunkZ*16);
 }
 
 private void generateSurface(World world, Random random, int BlockX, int BlockZ) {
-for(int i =0; i<10;i++){
+for(int i =0; i<6;i++){
 int Xcoord = BlockX + random.nextInt(16);
 int Zcoord = BlockZ + random.nextInt(16);
-int Ycoord = random.nextInt(16);
+int Ycoord = random.nextInt(64);
 (new WorldGenMinable(magicalfantastic.magicshardore.blockID, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
 }}}
