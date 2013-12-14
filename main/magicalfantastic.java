@@ -19,7 +19,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 /*
 * Basic needed forge stuff
 */
-@Mod(modid="ModTutorial",name="Mod Tutorial",version="v1")
+@Mod(modid="Dirus",name="Dirus",version="v0.0.1.2")
 @NetworkMod(clientSideRequired=true,serverSideRequired=false)
 public class magicalfantastic {
 /*
@@ -29,6 +29,7 @@ public class magicalfantastic {
 //items
 public static Item Woodstaff;
 public static Item magicshard;
+public static Item orangedust;
 //blocks
 public static Block magicshardore;
 
@@ -42,13 +43,15 @@ public void load(FMLInitializationEvent event){
  // define items
         Woodstaff=new basicstaff(3250).setUnlocalizedName("Woodstaff");
         magicshard = new basicitem(3251).setUnlocalizedName("magicshard");
+        orangedust = new basicitem(3252).setUnlocalizedName("orangedust");
 // define blocks
 magicshardore = new magicshardore(3350,magicshardore).setUnlocalizedName("MagicShardOre").setHardness(7.0F).setLightValue(0.625F).setResistance(5.0F);
 GameRegistry.registerBlock(magicshardore,"magicshardore");
 //adding names
 LanguageRegistry.addName(Woodstaff,"Wooden Staff");
-LanguageRegistry.addName(magicshardore, "Melpomene");
-LanguageRegistry.addName(magicshard, "Melpomene Fragment");
+LanguageRegistry.addName(magicshardore, "Urania");
+LanguageRegistry.addName(magicshard, "Urania Fragment");
+LanguageRegistry.addName(orangedust,"Potestatem");
 //world generators
 GameRegistry.registerWorldGenerator(new WorldGeneratorMagicShardOre());
 
