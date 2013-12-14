@@ -29,7 +29,7 @@ public class magicalfantastic {
 //items
 public static Item Woodstaff;
 //blocks
-
+public static Block magicshardore;
 
 //tools
 
@@ -41,12 +41,12 @@ public void load(FMLInitializationEvent event){
  // define items
         Woodstaff=new basicstaff(3250).setUnlocalizedName("Woodstaff");
 // define blocks
-
+magicshardore = new magicshardore(3350,magicshardore).setUnlocalizedName("MagicShardOre").setHardness(7.0F).setLightValue(1.0F).setResistance(5.0F);
 
 //adding names
 LanguageRegistry.addName(Woodstaff,"Wooden Staff");
 //world generators
-
+GameRegistry.registerWorldGenerator(new WorldGeneratorMagicShardOre());
 
 }
 }
